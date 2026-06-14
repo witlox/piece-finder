@@ -1,4 +1,4 @@
-# LegoPieceFinder
+# PieceFinder
 
 An iOS app that helps you find specific LEGO pieces in a pile. Photograph a piece from the instruction manual, then use your camera with AR overlays to spot matching pieces.
 
@@ -42,7 +42,7 @@ brew install xcodegen
 xcodegen generate
 
 # Open and build
-open LegoPieceFinder.xcodeproj
+open PieceFinder.xcodeproj
 ```
 
 ## Installing on iPhone / iPad
@@ -50,9 +50,9 @@ open LegoPieceFinder.xcodeproj
 AR scanning requires a physical device. Follow these steps to install the app:
 
 1. **Connect your device** to your Mac with a USB cable
-2. **Open the project** in Xcode (`open LegoPieceFinder.xcodeproj`)
+2. **Open the project** in Xcode (`open PieceFinder.xcodeproj`)
 3. **Set your development team:**
-   - Select the `LegoPieceFinder` project in the navigator
+   - Select the `PieceFinder` project in the navigator
    - Go to the **Signing & Capabilities** tab
    - Check **Automatically manage signing**
    - Select your team from the **Team** dropdown (use your personal Apple ID if you don't have a paid developer account)
@@ -70,7 +70,7 @@ AR scanning requires a physical device. Follow these steps to install the app:
 ## Project Structure
 
 ```
-LegoPieceFinder/
+PieceFinder/
   App/                  # Entry point and app state
   Views/                # SwiftUI views (capture, scan, AR container)
   Vision/               # Detection pipeline, contour/shape/color analysis

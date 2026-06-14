@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-LegoPieceFinder is a native iOS app (Swift 6 / SwiftUI) that uses ARKit and the Vision framework to find specific LEGO pieces in a pile. The user photographs a piece from the instruction manual, then points the camera at a pile — the app highlights matching pieces with AR overlays.
+PieceFinder is a native iOS app (Swift 6 / SwiftUI) that uses ARKit and the Vision framework to find specific LEGO pieces in a pile. The user photographs a piece from the instruction manual, then points the camera at a pile — the app highlights matching pieces with AR overlays.
 
 ## Build
 
@@ -12,14 +12,14 @@ xcodegen generate
 
 # Build (requires Xcode, not just Command Line Tools)
 DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer xcodebuild \
-  -project LegoPieceFinder.xcodeproj \
-  -scheme LegoPieceFinder \
+  -project PieceFinder.xcodeproj \
+  -scheme PieceFinder \
   -sdk iphoneos \
   -destination 'generic/platform=iOS' \
   build
 
 # Or open in Xcode
-open LegoPieceFinder.xcodeproj
+open PieceFinder.xcodeproj
 ```
 
 - Deployment target: iOS 17.0
@@ -31,8 +31,8 @@ open LegoPieceFinder.xcodeproj
 ## Project Structure
 
 ```
-LegoPieceFinder/
-  App/                  Entry point (LegoPieceFinderApp.swift) and AppState
+PieceFinder/
+  App/                  Entry point (PieceFinderApp.swift) and AppState
   Views/                SwiftUI views — CaptureView, ScanView, ARViewContainer,
                         ReferencePreviewCard, MatchLegendOverlay
   Vision/               Detection pipeline and analysis:
