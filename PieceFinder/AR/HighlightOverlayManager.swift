@@ -25,6 +25,22 @@ final class HighlightOverlayManager: ObservableObject {
         let viewWidth = Float(arView.bounds.width)
         let viewHeight = Float(arView.bounds.height)
 
+        // Camera intrinsics → exact per-axis FOV factors. At distance d, a
+        // bbox spanning fraction f of the buffer corresponds to
+        //   physical_meters = f * d * (bufferDimension_pixels / focalLength_pixels)
+        // Fallback to typical iPhone wide-camera values when no frame is yet
+        // available (very first frames or simulator).
+        let (widthFactor, heightFactor): (Float, Float)
+        if let frame = arView.session.currentFrame {
+            let k = frame.camera.intrinsics
+            let res = frame.camera.imageResolution
+            widthFactor  = Float(res.width)  / k[0][0]   // res.width  / fx
+            heightFactor = Float(res.height) / k[1][1]   // res.height / fy
+        } else {
+            widthFactor  = 1.40   // ~70° horizontal FOV
+            heightFactor = 1.04   // ~55° vertical FOV
+        }
+
         for candidate in candidates {
             // Convert Vision normalized rect to screen coordinates
             let bbox = candidate.boundingBox
@@ -50,11 +66,8 @@ final class HighlightOverlayManager: ObservableObject {
                 distance = fallbackDistance
             }
 
-            // Estimate physical size from normalized bbox and distance
-            // Approximate: at distance d, the FOV covers roughly d * tan(fov/2) * 2
-            let hFov: Float = 1.0 // approximate horizontal field-of-view factor
-            let physicalWidth = Float(bbox.width) * distance * hFov
-            let physicalHeight = Float(bbox.height) * distance * hFov
+            let physicalWidth  = Float(bbox.width)  * distance * widthFactor
+            let physicalHeight = Float(bbox.height) * distance * heightFactor
 
             // Create highlight entity
             let highlight = HighlightEntity.make(
