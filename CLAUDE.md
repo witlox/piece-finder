@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-PieceFinder is a native iOS app (Swift 6 / SwiftUI) that uses ARKit and the Vision framework to find specific LEGO pieces in a pile. The user photographs a piece from the instruction manual, then points the camera at a pile — the app highlights matching pieces with AR overlays.
+PieceFinder is a native iOS app (Swift 6 / SwiftUI) that uses ARKit and the Vision framework to find specific bricks in a pile. The user photographs a piece from the instruction manual, then points the camera at a pile — the app highlights matching pieces with AR overlays.
 
 ## Build
 

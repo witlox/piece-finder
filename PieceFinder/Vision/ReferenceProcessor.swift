@@ -28,7 +28,7 @@ enum ReferenceProcessor {
 
     // MARK: - Public API
 
-    /// Processes a photo of a LEGO manual callout box or full page and
+    /// Processes a photo of a manual callout box or full page and
     /// extracts descriptors for all piece illustrations found.
     ///
     /// Uses two strategies:
@@ -96,7 +96,7 @@ enum ReferenceProcessor {
         )
     }
 
-    /// Processes a photo of an actual LEGO piece on a real surface.
+    /// Processes a photo of an actual brick on a real surface.
     ///
     /// Uses Vision's foreground-instance segmentation as the primary path —
     /// this is the same Apple ML model that powers Subject Lift, so it isolates
@@ -476,7 +476,7 @@ enum ReferenceProcessor {
 
     /// Extracts one piece per quantity marker using grid-based splitting.
     ///
-    /// LEGO callout boxes arrange pieces in a grid. Each marker ("1x", "2x")
+    /// Callout boxes arrange pieces in a grid. Each marker ("1x", "2x")
     /// sits underneath and to the left of its piece. This method:
     /// 1. Clusters markers by x-position into columns
     /// 2. Within each column, sorts by y-position into rows

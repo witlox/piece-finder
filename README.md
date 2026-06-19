@@ -1,11 +1,11 @@
 # PieceFinder
 
-An iOS app that helps you find specific LEGO pieces in a pile. Photograph a piece from the instruction manual, then use your camera with AR overlays to spot matching pieces.
+An iOS app that helps you find specific bricks in a pile. Photograph a piece from the instruction manual, then use your camera with AR overlays to spot matching pieces.
 
 ## How It Works
 
-1. **Capture** — Take a photo of the LEGO piece illustration from the instruction manual
-2. **Scan** — Point your camera at a pile of LEGO pieces
+1. **Capture** — Take a photo of the piece illustration from the instruction manual
+2. **Scan** — Point your camera at a pile of pieces
 3. **Match** — The app highlights matching pieces with AR overlays:
    - **Orange** = same shape
    - **Green** = same shape + same color

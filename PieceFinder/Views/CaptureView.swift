@@ -28,7 +28,7 @@ enum CaptureMode: String, CaseIterable, Identifiable {
         case .illustration:
             return "One piece drawing from the manual\nCentre it in the frame"
         case .realPiece:
-            return "A real LEGO brick on a flat surface\nFill the frame with the piece"
+            return "A real brick on a flat surface\nFill the frame with the piece"
         case .page:
             return "The bordered box with pieces and\nquantity markers (1x, 2x, ...)\nFill the frame with just the box"
         }
